@@ -1,14 +1,19 @@
+import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Calculator implements ActionListener {
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
+	JTextField text1 = new JTextField(20);
+	JTextField text2 = new JTextField(20);
 	JButton mul = new JButton();
 	JButton div = new JButton();
 	JButton add = new JButton();
@@ -25,10 +30,13 @@ public class Calculator implements ActionListener {
 
 		frame.add(panel);
 		frame.setVisible(true);
+		panel.add(text1);
+		panel.add(text2);
 		panel.add(add);
 		panel.add(mul);
 		panel.add(div);
 		panel.add(sub);
+		frame.pack();
 
 		add.addActionListener(this);
 		sub.addActionListener(this);
@@ -45,6 +53,10 @@ public class Calculator implements ActionListener {
 	}
 
 	public int multiply(int num1, int num2) {
+		
+	
+		
+
 
 		return (num1 * num2);
 
@@ -70,22 +82,35 @@ public class Calculator implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		
+		
 		if (e.getSource() == add) {
-
-			System.out.println(add(1, 1));
+			int num1 = Integer.parseInt(text1.getText());
+			int num2 = Integer.parseInt(text2.getText());
+			System.out.println(add(num1, num2));
+			AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+			sound.play();
 
 		} else if (e.getSource() == sub) {
-
-			System.out.println(subtract(1, 1));
+			int num1 = Integer.parseInt(text1.getText());
+			int num2 = Integer.parseInt(text2.getText());
+			System.out.println(subtract(num1, num2));
+			AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+			sound.play();
 
 		} else if (e.getSource() == mul) {
-
-			System.out.println(multiply(1, 1));
+			int num1 = Integer.parseInt(text1.getText());
+			int num2 = Integer.parseInt(text2.getText());
+			System.out.println(multiply(num1, num2));
+			AudioClip sound = JApplet.newAudioClip(getClass().getResource("moo.wav"));
+			sound.play();
 
 		} else if (e.getSource() == div) {
-
-			System.out.println(divide(1, 1));
+			int num1 = Integer.parseInt(text1.getText());
+			int num2 = Integer.parseInt(text2.getText());
+			System.out.println(divide(num1, num2));
+			AudioClip sound = JApplet.newAudioClip(getClass().getResource("moo.wav"));
+			sound.play();
 
 		}
 
