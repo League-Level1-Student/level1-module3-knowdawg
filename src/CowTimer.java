@@ -15,7 +15,22 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
+		
+		CowTimer cow = new CowTimer();
+		cow.setUp();
+		
+		
 
+	}
+	
+	
+	
+	void setUp() throws InterruptedException{
+		
+		setTime(1);
+		
+		start();
+		
 	}
 
 	private int minutes;
@@ -30,6 +45,10 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60 seconds
 		 * using Thread.sleep(int milliseconds).
 		 */
+		
+		Thread.sleep( 10000);
+		
+		
 
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo sound.
@@ -37,6 +56,8 @@ public class CowTimer {
 		 * from freesound.org, then drag it intothe default package.
 		 */
 
+		playSound("moo.wav");
+		
 	}
 
 	private void playSound(String fileName) {

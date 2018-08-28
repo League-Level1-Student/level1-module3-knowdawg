@@ -33,9 +33,9 @@ public class SlotMachine {
 	
 	void setUp() {
 		
-		 chery = loadImageFromComputer("Chery.jpg");
-		 Apple = loadImageFromComputer("apple.jpg");
-		 Mellon = loadImageFromComputer("mellon.jpeg");
+		 //chery = loadImageFromComputer("Chery.jpg");
+		 //Apple = loadImageFromComputer("apple.jpg");
+		 //Mellon = loadImageFromComputer("mellon.jpeg");
 		
 		frame.add(panel);
 		panel.add(spin);
@@ -43,6 +43,7 @@ public class SlotMachine {
 		panel.add(Mellon);
 		panel.add(chery);
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(0);
 		frame.pack();
 		
 		if (reel1 == 0) {
